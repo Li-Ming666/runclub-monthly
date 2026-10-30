@@ -8,7 +8,7 @@ ClawCloud Run 是一个跑 Docker 镜像的托管平台：GitHub 账号注册满
 
 ## 0. 前置（10 分钟）
 
-1. 代码已经推到 GitHub 仓库，`main` 分支的 Actions 里「构建并发布 Docker 镜像」是绿勾。
+1. 代码已经推到 GitHub 仓库，`main` 分支的 Actions 里「构建并发布 Docker 镜像」是绿勾（本仓库 2026-10-30 已构建通过）。
 2. 到仓库 **Packages** → `runclub-monthly` → **Package settings** → 可见性改成 **Public**。
 3. 记下你的镜像地址，格式固定：
 
@@ -16,7 +16,11 @@ ClawCloud Run 是一个跑 Docker 镜像的托管平台：GitHub 账号注册满
    ghcr.io/你的GitHub用户名/runclub-monthly:latest
    ```
 
-   用户名和仓库名都要小写。
+   用户名和仓库名都要小写。**本仓库的实际地址**：
+
+   ```
+   ghcr.io/li-ming666/runclub-monthly:latest
+   ```
 
 ---
 
