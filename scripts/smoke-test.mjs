@@ -16,8 +16,10 @@ const check = (name, ok, detail = "") => {
 const health = await fetch(`${root}/api/health`).then(r => r.status === 200 && r.json()).catch(() => null);
 check("健康检查", !!health?.ok, health ? JSON.stringify(health) : "无响应");
 
-const home = await fetch(`${root}/`).then(r => r.status === 200 && r.text()).catch(() => "");
-check("首页", home.includes("跑友"), home ? `${home.length} 字节` : "无响应");
+const home = await fetch(`${root}/`)
+  .then(r => (r.ok ? r.text() : ""))
+  .catch(() => "");
+check("首页", typeof home === "string" && home.includes("跑友"), typeof home === "string" && home ? `${home.length} 字节` : "无响应");
 
 const denied = await fetch(`${root}/api/leaderboard?month=2026-10`);
 check("无口令访问榜单被拒绝", denied.status === 403, `HTTP ${denied.status}`);

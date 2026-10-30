@@ -43,11 +43,19 @@ npm start
 
 ## 三、把代码放到 GitHub（所有方案的共同第一步）
 
+这个目录已经是一个初始化好的 Git 仓库（有一次提交），你只要新建远程仓库并推上去：
+
 ```powershell
-git init
+git remote add origin https://github.com/你的用户名/runclub-monthly.git
+git push -u origin main
+```
+
+如果目录里没有 `.git`（比如你重新解压了一份），先初始化：
+
+```powershell
+git init -b main
 git add .
 git commit -m "跑友月跑量：可部署版"
-git branch -M main
 git remote add origin https://github.com/你的用户名/runclub-monthly.git
 git push -u origin main
 ```
