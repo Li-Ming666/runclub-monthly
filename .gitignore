@@ -1,0 +1,12 @@
+node_modules/
+dist/
+data/
+.smoke/
+.env
+.env.*
+config.env
+*.sqlite
+*.sqlite-*
+*.log
+.DS_Store
+Thumbs.db

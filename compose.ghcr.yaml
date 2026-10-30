@@ -1,0 +1,37 @@
+# 用 GitHub Actions 构建好的镜像部署到自己的服务器（不需要在服务器上装 Node）。
+# 用法：
+#   1. docker compose -f compose.ghcr.yaml pull
+#   2. docker compose -f compose.ghcr.yaml up -d
+# 前置：把下面的 ghcr.io/OWNER/REPO 换成你的仓库地址（全是小写）。
+services:
+  app:
+    image: ghcr.io/OWNER/runclub-monthly:latest
+    restart: unless-stopped
+    env_file: config.env
+    environment:
+      PORT: "3000"
+      DATA_DIR: /data
+    volumes:
+      - runclub_data:/data
+    expose:
+      - "3000"
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    env_file: config.env
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - app
+
+volumes:
+  runclub_data:
+  caddy_data:
+  caddy_config:
