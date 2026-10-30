@@ -1,8 +1,12 @@
 # 方案二：最快看到线上效果（Railway）
 
+> ✅ **推荐先走这条。** 2026-10-31 从大陆网络实测：`railway.com` 和 `*.up.railway.app` 都能正常打开（ClawCloud 控制台打不开）。
+
 Railway 用 GitHub 账号登录，直接连你的仓库、用仓库里的 `Dockerfile` 构建，**不需要先构建镜像**，5 分钟能出一个 `https://xxx.up.railway.app` 地址。
 
 新账号有 **30 天试用、一次性 $5 额度**；试用结束后是 Free 计划（每月 $1 额度、0.5 GB 内存、0.5 GB 持久卷）。$1/月 跑 24 小时不间断的服务大概只够十几天，所以它适合「先上线看看效果」，长期使用请看 [方案三](03-服务器部署.md)。
+
+本仓库：<https://github.com/Li-Ming666/runclub-monthly>（`main` 分支的 CI 和镜像构建都已通过，`railway.json` 已就位）。
 
 ---
 

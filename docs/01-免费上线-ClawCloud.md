@@ -1,5 +1,7 @@
 # 方案一：免费上线（ClawCloud Run）
 
+> ⚠️ **2026-10-31 实测：`console.run.claw.cloud` 在大陆网络被直接重置（`ERR_CONNECTION_CLOSED`），不挂梯子打不开。** 如果你的网络能打开控制台，再按本文走；打不开请直接用 [方案二 Railway](02-快捷试用-Railway.md)。
+
 目标：**不买服务器、不买域名、不花钱**，拿到一个 `https://xxxx.clawcloudrun.com` 的公开地址，能发给微信群。
 
 ClawCloud Run 是一个跑 Docker 镜像的托管平台：GitHub 账号注册满 180 天，每月送 $5 额度；支持挂持久卷（数据库和截图不会丢），也支持设置环境变量。注意它是免费平台，稳定性一般，长期使用请看 [方案三](03-服务器部署.md)。
